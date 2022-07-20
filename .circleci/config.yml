@@ -25,7 +25,7 @@ jobs:
       - run: 
           name: "Greet someone"
           command: |
-            echo "hello $WHOAMI $NAME" > output.txt
+            echo "hello $WHOAMI $NAME" > ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
