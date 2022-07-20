@@ -21,7 +21,6 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - print_pipeline_id:
 
 
   print-hello:
@@ -32,6 +31,7 @@ jobs:
           name: "Greet someone"
           command: |
             echo "hello $WHOAMI $NAME" > ~/output.txt
+      - print_pipeline_id:
       - persist_to_workspace:
           root: ~/
           paths:
