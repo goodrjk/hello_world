@@ -31,11 +31,14 @@ jobs:
           name: "Greet someone"
           command: |
             echo "hello $WHOAMI $NAME" > ~/output.txt
+            return 1
       - persist_to_workspace:
           root: ~/
           paths:
             - output.txt
-         
+      - run:
+          command: echo "something failed"
+          when: on_fail   
   print-world:
     docker:
       - image: circleci/node:13.8.0
